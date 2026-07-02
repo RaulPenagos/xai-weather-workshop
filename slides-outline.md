@@ -156,12 +156,12 @@
 - Say explicitly before showing any results: this is differentiating *through* the network, not querying it from outside
 - Land the callback line early: "the same operation as an adjoint model's gradient in 4D-Var"
 
-### Slide 23 — Live demo: try it yourself, a network small enough to hand-differentiate (or screenshots if presenting without the notebook open)
-- Prefer switching to the live notebook here over a static slide -- dragging the slider is the point
-- If a static slide is unavoidable, use two screenshots side by side: one input value where hidden units are mid-range (edges thick) and one near saturation (edges thin, near +/-1)
-- Tiny hand-differentiated network: 1 scalar input, 4 tanh hidden units, 1 linear output; weights hand-picked so hidden units saturate at different input values -- self-contained, offline, no GPU/autograd library, ~15 lines of hand-derived numpy calculus
-- Node colour = activation, edge thickness = contribution to dy/dx (red = pushes output up, blue = pushes output down); side panel shows dy/dx vs x with a marker at the current position
-- Teaching point: near saturation, edges go thin -- low sensitivity -- even though activations are near their extremes; gradient-based sensitivity is state-dependent, which is why every AIFS sensitivity figure elsewhere in this notebook is specific to one perturbation at one moment, not a universal statement about the model
+### Slide 23 — Live demo: forward vs. backward, a network small enough to hand-differentiate (or screenshots if presenting without the notebook open)
+- Prefer switching to the live notebook here over a static slide -- the point is that dragging forward takes four separate passes and backward takes one
+- Tiny hand-differentiated network: 4 independent scalar inputs, each its own tanh hidden unit, summed into 1 linear output; weights hand-picked so units saturate at different input values -- self-contained, offline, no GPU/autograd library
+- Forward-mode widget: one 244-step slider that is genuinely four sliders end to end (61 steps per input) -- each segment varies only one input (others pinned at 0) and reveals only that one input's sensitivity; land explicitly that you need all four segments to learn what backward gets in one
+- Backward-mode widget: one 61-step slider moving all four inputs together; one pass reveals all four sensitivities at once (network diagram + bar chart), regardless of how many inputs there are -- this is the entire reason AIFS uses backward mode (millions of inputs, one perturbed output)
+- Teaching point carried over from both: near saturation, edges go thin -- low sensitivity -- even though activations are near their extremes; gradient-based sensitivity is state-dependent, which is why every AIFS sensitivity figure elsewhere in this notebook is specific to one perturbation at one moment, not a universal statement about the model
 
 ### Slide 24 — Artifact: pressure-level summary
 - `artifacts/images/01_pressure_level_summary.png`

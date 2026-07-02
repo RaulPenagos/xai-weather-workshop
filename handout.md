@@ -58,9 +58,11 @@ you already think in terms of sensitivities and adjoints from data
 assimilation, you already know how to think about this class of XAI method
 — the transfer is direct, not metaphorical.
 
-In the live session, a hands-on widget lets participants drag the input of
-a tiny hand-differentiated toy network and watch its sensitivity update in
-real time — a tactile complement to the AIFS figures shown here.
+In the live session, two hands-on widgets let participants feel the
+difference directly: dragging one input at a time on a tiny toy network
+(forward mode — one experiment per input) versus one pass that reveals
+every input's sensitivity at once (backward mode) — a tactile version of
+why AIFS's sensitivity maps are computed backward at all.
 
 ## Go further
 
