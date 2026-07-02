@@ -1,0 +1,52 @@
+name: Sync student branch
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-student-branch
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: Rebuild student branch from master
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The student branch is fully regenerated from master on every run --
+      # it always ends up as a single fresh commit, not a merge. That's why
+      # the push below is a force-push: there's nothing on the student
+      # branch that isn't reconstructed here, so there's nothing to lose.
+      - name: Rebuild student branch content
+        run: |
+          set -euo pipefail
+          git checkout -B student
+
+          git rm -rq solutions
+          git rm -q facilitator_notes.md slides-outline.md 00_framing/framing.md
+
+          python .github/scripts/clean_student_readme.py
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Sync student branch from master@${GITHUB_SHA::7}"
+
+      - name: Push student branch
+        run: git push origin HEAD:student --force
