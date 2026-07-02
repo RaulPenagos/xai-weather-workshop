@@ -224,7 +224,7 @@
 - This repo: MIT License, Copyright (c) 2026 Jesper Dramsch
 
 ### Slide 32 — Questions / contact
-- Contact: vorsilbenphysiker@gmail.com (TODO: confirm preferred public contact for slide — may want institutional address instead)
+- Contact: ai-in-public-health@rki.de
 - Questions welcome now, or via repo issues once pushed
 - Colab links for Part 1 notebook (TODO: confirm `jesperdramsch/xai-weather-workshop` path before badge goes live)
 - Thank you / Climademics Summer School 2026-07-03

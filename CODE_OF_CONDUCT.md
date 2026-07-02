@@ -61,7 +61,7 @@ appointed representative at an online or offline event.
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at:
 
-[workshop instructor email -- TODO: confirm contact / whether the Climademics Summer School has its own event-wide CoC to link instead]
+ai-in-public-health@rki.de
 
 All complaints will be reviewed and investigated promptly and fairly.
 
