@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  test-notebook:
+    name: Execute Part 1 notebook end-to-end
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned dependencies
+        run: uv sync --all-groups
+
+      - name: Run 01_classic_xai.ipynb via nbmake
+        run: uv run pytest --nbmake --nbmake-timeout=600 01_classic_xai.ipynb
+
+      - name: Upload executed notebook on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: executed-notebook-${{ github.run_id }}
+          path: 01_classic_xai.ipynb
+          retention-days: 7
