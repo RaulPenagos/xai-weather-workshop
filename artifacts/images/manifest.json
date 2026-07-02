@@ -1,0 +1,32 @@
+[
+  {
+    "file": "fig01_cell19.png",
+    "cellIndex": 19,
+    "sizeBytes": 49591,
+    "producingCode": "plot_summary_pl(stats_df, stats=[\"min\", \"max\"], cmaps=dict(min=\"Reds_r\", max=\"Blues\"))"
+  },
+  {
+    "file": "fig02_cell21.png",
+    "cellIndex": 21,
+    "sizeBytes": 181575,
+    "producingCode": "plot_sensitivities(sensitivities, \"2t\")"
+  },
+  {
+    "file": "fig03_cell22.png",
+    "cellIndex": 22,
+    "sizeBytes": 199529,
+    "producingCode": "plot_sensitivities(sensitivities, \"z_500\")"
+  },
+  {
+    "file": "fig04_cell23.png",
+    "cellIndex": 23,
+    "sizeBytes": 129177,
+    "producingCode": "plot_sensitivities(sensitivities, \"z_500\", area=(100, 140, 20, 60))\n# area=(left, right, bottom, top) = (lon_min, lon_max, lat_min, lat_max)"
+  },
+  {
+    "file": "fig05_cell24.png",
+    "cellIndex": 24,
+    "sizeBytes": 31873,
+    "producingCode": "plot_cross_section(\"t\", sensitivities, latitude=40.5, xlim=(90, 160), margin = 0.5)"
+  }
+]
