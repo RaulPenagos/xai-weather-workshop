@@ -1,0 +1,173 @@
+NOTICE
+======
+
+This file describes the provenance of, and attribution for, material reused in
+the "xai-weather-workshop" repository ("From SHAP to AIFS -- Explainable AI
+for Weather and Climate", working title). The LICENSE file at the repository
+root (MIT, Copyright (c) 2026 Jesper Dramsch) covers only the original content
+created for this repository. It does not relicense the upstream material
+described below, which remains subject to its own terms as summarized here.
+
+This repository draws on three distinct upstream sources:
+  (a) Part 1 ("classic XAI" notebook, 01_classic_xai.ipynb and
+      solutions/01_classic_xai_solutions.ipynb) -- basis in the ml.recipes /
+      ml-for-science-reproducibility-tutorial project.
+  (b) Part 2 (02_aifs_sensitivities.ipynb and the pre-rendered artifacts in
+      artifacts/images/) -- basis in ECMWF's internal 2025 ML training course
+      materials.
+  (c) The workshop framing (00_framing/framing.md and related material) --
+      drawn from a Nature Geoscience Comment article (academic citation only,
+      not a software license).
+
+Each is detailed below.
+
+
+(a) PART 1 BASIS: ml.recipes / ml-for-science-reproducibility-tutorial
+------------------------------------------------------------------------
+
+01_classic_xai.ipynb and solutions/01_classic_xai_solutions.ipynb are a
+rebuild, extension, and correction of teaching material originally developed
+for the "ml.recipes" / ml-for-science-reproducibility-tutorial project.
+Notable changes made in this rebuild include: fixing a hardcoded
+label-ordering bug in the historical Sex -> Female/Male one-hot tree
+importance example (now using get_feature_names_out()), adding real
+individual conditional expectation (ICE) curves alongside the historical
+partial dependence averages, and replacing the deprecated JS-based
+shap.initjs()/force_plot API with the modern matplotlib-native SHAP API
+(shap.plots.waterfall, shap.plots.beeswarm).
+
+Upstream project:
+  ml-for-science-reproducibility-tutorial
+  https://github.com/JesperDramsch/ml-for-science-reproducibility-tutorial
+
+Citation (from the upstream project's CITATION.cff), APA style:
+  Dramsch, J. S., & Maggio, V. (2022). ML Recipes - Increase citations, ease
+  review & foster collaboration (Version PyData-Global-2022) [Computer
+  software]. https://github.com/JesperDramsch/ml-for-science-reproducibility-tutorial
+  Zenodo DOI: 10.5281/zenodo.10381234
+
+Authors credited in the upstream CITATION.cff: Jesper Sören Dramsch and
+Valerio Maggio. Both are credited here for their authorship of the original
+tutorial material this Part 1 notebook builds on.
+
+License of the upstream project: MIT License, Copyright (c) 2022 Jesper
+Dramsch. Reproduced below in full, as required by the MIT License's
+"include the above copyright notice" condition:
+
+  MIT License
+
+  Copyright (c) 2022 Jesper Dramsch
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+Dataset credit -- Palmer Penguins:
+  The dataset used throughout Part 1 is the Palmer Penguins dataset, collected
+  and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica
+  Long Term Ecological Research (LTER) Program. This repository does not hold
+  copyright over the dataset; it is credited here as customary practice when
+  reusing a third-party research dataset.
+
+Package credit -- palmerpenguins (PyPI):
+  This workshop's rebuild loads the dataset via the `palmerpenguins` Python
+  package (with `seaborn`'s `sns.load_dataset('penguins')` as a fallback).
+  The `palmerpenguins` package is authored by Muhammad Chenariyan Nakhaee and
+  distributed under the MIT License.
+
+
+(b) PART 2 BASIS: ECMWF / ecmwf-training 2025 ML training course materials
+------------------------------------------------------------------------
+
+02_aifs_sensitivities.ipynb and the pre-rendered artifacts in
+artifacts/images/ (01_pressure_level_summary.png, 02_map_2t_sensitivity.png,
+03_map_z500_sensitivity_global.png, 04_map_z500_sensitivity_regional.png,
+05_cross_section_temperature.png) are reused and adapted from ECMWF's
+internal 2025 ML training course, specifically the notebook
+5-xAI-with-AIFS/explain_AIFS-cpu.ipynb in the GitHub organization
+ecmwf-training (repository: 2025-ml-training).
+
+License status of the source repository: no public LICENSE file exists in
+that repository. This material is reused here with the direct authority of
+the workshop instructor, who is an ECMWF-affiliated contributor to that
+course. General attribution is given to "ECMWF / ecmwf-training course
+materials" for the notebook structure, narrative, and the AIFS backward
+sensitivity demonstration (unit perturbation of the 2m temperature forecast
+near 40N, 120E; O48-resolution AIFS checkpoint; 6-hour lead time).
+
+Sub-component under Apache License 2.0 -- perturbation.py / sensitivities.py:
+  Two helper files used by the source course notebook, perturbation.py and
+  sensitivities.py, are themselves copied in the ecmwf-training course from
+  the `anemoi-inference` package and carry an Apache License 2.0 header
+  (Copyright 2024 Anemoi contributors). If logic derived from these files is
+  reused verbatim (in whole or in part) within 02_aifs_sensitivities.ipynb or
+  any accompanying helper script in this repository, that derived logic
+  remains subject to the Apache License 2.0 terms below, reproduced as a
+  short attribution notice per the License's requirements:
+
+  ---
+  Copyright 2024 Anemoi contributors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Portions of this file originate from the anemoi-inference package
+  (https://github.com/ecmwf/anemoi-inference), reused via ECMWF's internal
+  2025 ML training course (ecmwf-training/2025-ml-training).
+  ---
+
+  A full copy of the Apache License, Version 2.0 is available at:
+  https://www.apache.org/licenses/LICENSE-2.0
+
+
+(c) FRAMING SOURCE: Nature Geoscience Comment (academic citation, not a
+    software license)
+------------------------------------------------------------------------
+
+The workshop's opening framing talk (00_framing/framing.md) and its
+motivating narrative (the trust/adoption argument for XAI in geoscience, the
+Space/Time/Feature framing from Fig. 1, and the arXiv literature-survey
+findings on XAI uptake) are paraphrased from:
+
+  Dramsch, J.S., Kuglitsch, M.M., Fernández-Torres, M.-Á., Toreti, A.,
+  Albayrak, R.A., Nava, L., Ghaffarian, S., Cheng, X., Ma, J., Samek, W.,
+  Venguswamy, R., Koul, A., Muthuregunathan, R. & Hrast Essenfelder, A.
+  (2025). Explainability can foster trust in artificial intelligence in
+  geoscience. Nature Geoscience.
+  https://doi.org/10.1038/s41561-025-01639-x
+
+This is an academic citation, not a software license grant; no code or
+software is reused from this source. Any direct quotations are short and
+clearly marked in context (e.g., the phrase XAI methods provide "an
+explanation to the user that justifies its recommendation, decision, or
+action").
+
+
+------------------------------------------------------------------------
+This NOTICE file is provided for attribution and transparency. Questions
+about licensing or attribution for this repository should be directed to
+the workshop instructor (see CODE_OF_CONDUCT.md for contact details, marked
+TODO pending confirmation).
