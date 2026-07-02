@@ -4,7 +4,7 @@ Instructor-facing notes for **"From SHAP to AIFS -- Explainable AI for Weather a
 
 These notes are for the person running the session live. They are not participant-facing material -- do not project this file. For the framing talk track itself, see `00_framing/framing.md` (built separately). For the notebooks, see `01_classic_xai.ipynb` and `02_aifs_sensitivities.ipynb` (built separately) and `solutions/01_classic_xai_solutions.ipynb`.
 
-> TODO: confirm the GitHub repo path used in Colab/Binder badge URLs throughout the workshop materials (currently placeholder `jesperdramsch/xai-weather-workshop`, not yet pushed).
+> The GitHub repo path used in Colab/Binder badge URLs throughout the workshop materials is confirmed as `jesperdramsch/xai-weather-workshop`. It still needs to be pushed before those links resolve.
 
 ---
 

@@ -38,40 +38,33 @@ prior XAI background.
 
 ## Setup
 
-There are three ways to run the notebooks, in order of preference.
+**Colab is the primary path for the workshop** (see Prerequisites above) --
+click the yellow badge for the notebook you want. The other badges are
+optional convenience alternatives; most (Gradient, SageMaker Studio Lab,
+Deepnote) need their own account, so **Binder remains the true no-account
+fallback** if you don't have a Google account (see below).
 
-### Option A: Google Colab (primary, no install)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD)
 
-Click a badge below to open the notebook directly in Colab. Each notebook
-installs its own dependencies in the first cell.
+**Part 1 -- Classic XAI (guided exercise):** `01_classic_xai.ipynb`
+[![](https://img.shields.io/badge/view-notebook-orange)](01_classic_xai.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=01_classic_xai.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2F01_classic_xai.ipynb)
 
-<!--
-TODO: the GitHub path below (jesperdramsch/xai-weather-workshop) is a
-placeholder. The repository has not been pushed yet -- confirm the final
-org/repo name and update these badge URLs before the workshop.
--->
+**Part 1 solutions:** `solutions/01_classic_xai_solutions.ipynb`
+[![](https://img.shields.io/badge/view-notebook-orange)](solutions/01_classic_xai_solutions.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=solutions/01_classic_xai_solutions.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2Fsolutions%2F01_classic_xai_solutions.ipynb)
 
-Part 1 -- Classic XAI (guided exercise):
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb)
+**Part 2 -- AIFS sensitivities (instructor demo):** `02_aifs_sensitivities.ipynb`
+[![](https://img.shields.io/badge/view-notebook-orange)](02_aifs_sensitivities.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=02_aifs_sensitivities.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2F02_aifs_sensitivities.ipynb)
 
-Part 2 -- AIFS sensitivities (instructor demo):
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb)
+Each notebook installs its own dependencies in the first cell (Colab/Binder/etc.), so any badge above gets you to a working environment without a local install.
 
-### Option B: Binder (fallback, no Google account needed)
-
-<!--
-TODO: same placeholder path as above (jesperdramsch/xai-weather-workshop).
-Update once the repository has a confirmed home.
--->
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/main)
+### Binder details
 
 Binder builds its environment from [`binder/requirements.txt`](binder/requirements.txt),
 which mirrors the pinned dependencies in `pyproject.toml`. Startup can take a
 few minutes on a cold build; if you don't have a Google account, launch this
 ahead of the session rather than at the start.
 
-### Option C: Local / uv
+### Local / uv
 
 If you prefer to run locally with [uv](https://docs.astral.sh/uv/):
 
@@ -81,8 +74,6 @@ cd xai-weather-workshop
 uv sync
 uv run jupyter lab
 ```
-
-<!-- TODO: clone URL above uses the same placeholder path as the badges. -->
 
 This uses the pinned dependency set in `pyproject.toml` (and `uv.lock` for a
 fully reproducible environment).
@@ -168,8 +159,6 @@ If you use or adapt material from this workshop, please cite it as:
 > Dramsch, J. S. (2026). *From SHAP to AIFS -- Explainable AI for Weather and
 > Climate* [Workshop materials]. Climademics Summer School.
 > https://github.com/jesperdramsch/xai-weather-workshop
-
-<!-- TODO: update the citation URL once the repository path is confirmed. -->
 
 and, for the conceptual framing this workshop is built around, please also
 cite Dramsch et al. (2025), *Nature Geoscience*,

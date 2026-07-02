@@ -214,7 +214,7 @@
 ### Slide 30 — Resources
 - Part 1 basis: ml.recipes — https://github.com/JesperDramsch/ml-for-science-reproducibility-tutorial (Dramsch & Maggio, 2022, MIT License)
 - Framing paper: Dramsch et al. (2025), *Nature Geoscience*, https://doi.org/10.1038/s41561-025-01639-x
-- Workshop repo: `github.com/jesperdramsch/xai-weather-workshop` — TODO: confirm path, not yet pushed as of this writing
+- Workshop repo: `github.com/jesperdramsch/xai-weather-workshop` (not yet pushed as of this writing)
 - Palmer Penguins data: Dr. Kristen Gorman & Palmer Station Antarctica LTER; `palmerpenguins` package by Muhammad Chenariyan Nakhaee (MIT)
 
 ### Slide 31 — Acknowledgements / attribution
@@ -226,7 +226,7 @@
 ### Slide 32 — Questions / contact
 - Contact: ai-in-public-health@rki.de
 - Questions welcome now, or via repo issues once pushed
-- Colab links for Part 1 notebook (TODO: confirm `jesperdramsch/xai-weather-workshop` path before badge goes live)
+- Colab links for Part 1 notebook (`jesperdramsch/xai-weather-workshop` -- push the repo before the badge goes live)
 - Thank you / Climademics Summer School 2026-07-03
 
 ---
@@ -252,8 +252,8 @@
 
 ## Notes for the slide-deck builder
 
-- **TODO**: `github.com/jesperdramsch/xai-weather-workshop` is a placeholder path — repo not yet pushed; confirm before putting it on any Colab/Binder badge slide.
-- `00_framing/framing.md` does not exist in the repo yet (being authored in parallel). Slides 2–9 above are constructed directly from the shared Nature Geoscience framing facts and should be reconciled with `framing.md` once it lands — the slide breaks are designed to mirror its expected structure (why now -> what XAI gives you -> adoption gap -> survey -> where/when/what framing -> challenges -> recommendations -> this workshop as "Resources").
+- `github.com/jesperdramsch/xai-weather-workshop` is the confirmed repo path; it still needs to be pushed before any Colab/Binder badge slide resolves.
+- Slides 2-9 above mirror `00_framing/framing.md`'s structure (why now -> what XAI gives you -> adoption gap -> survey -> where/when/what framing -> challenges -> recommendations -> this workshop as "Resources") -- double-check them against that file for wording drift, since both were authored from the same source facts independently.
 - Keep colorblind-safe palettes (viridis/cmocean) on any recreated chart slides (e.g. adoption-gap time series, Venn diagram); avoid red-green encodings, consistent with notebook style.
 - Tone: measured, evidence-based, no hype language ("revolutionary", "game-changing", "unlock the power of" are all out).
 - Do not embed the Nature Geoscience PDF or copy figures from it directly into slides without checking copyright/reuse terms with the corresponding author (Comment articles are typically journal-copyrighted, unlike the workshop's own MIT-licensed materials) — paraphrase and cite instead, consistent with how the notebooks/framing.md handle this.
