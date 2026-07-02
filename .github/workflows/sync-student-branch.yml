@@ -3,7 +3,7 @@ name: Sync student branch
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch: {}
 
 permissions:
@@ -15,13 +15,13 @@ concurrency:
 
 jobs:
   sync:
-    name: Rebuild student branch from master
+    name: Rebuild student branch from main
     runs-on: ubuntu-latest
     steps:
-      - name: Check out master
+      - name: Check out main
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
           fetch-depth: 1
 
       - name: Set up Python
@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      # The student branch is fully regenerated from master on every run --
+      # The student branch is fully regenerated from main on every run --
       # it always ends up as a single fresh commit, not a merge. That's why
       # the push below is a force-push: there's nothing on the student
       # branch that isn't reconstructed here, so there's nothing to lose.
@@ -46,7 +46,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Sync student branch from master@${GITHUB_SHA::7}"
+          git commit -m "Sync student branch from main@${GITHUB_SHA::7}"
 
       - name: Push student branch
         run: git push origin HEAD:student --force

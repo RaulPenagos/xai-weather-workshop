@@ -4,7 +4,7 @@ instructor-only material (which the sync workflow has already deleted from
 the working tree) and prepends a banner explaining the branch split.
 
 Best-effort: if a known block's exact text has drifted since this script was
-written (because master's README changed), that block is left in place with
+written (because main's README changed), that block is left in place with
 a warning printed to the workflow log, rather than failing the sync.
 """
 
@@ -15,15 +15,15 @@ README = Path("README.md")
 
 BANNER = """> **You're on the `student` branch.** Solutions and facilitator-only
 > materials (`solutions/`, `facilitator_notes.md`, `slides-outline.md`,
-> `00_framing/framing.md`) live on `master` -- this branch mirrors
+> `00_framing/framing.md`) live on `main` -- this branch mirrors
 > everything else and is kept in sync automatically. This banner and the
-> branch content are regenerated on every push to `master`; don't edit
-> this branch directly, edit `master` instead.
+> branch content are regenerated on every push to `main`; don't edit
+> this branch directly, edit `main` instead.
 
 """
 
 # Each entry: (label, exact text to remove). Removal is a plain substring
-# match -- if master's wording changes, this silently stops matching and the
+# match -- if main's wording changes, this silently stops matching and the
 # text is left in place (see the warning below), which is the safe failure
 # mode for a cosmetic cleanup step.
 BLOCKS_TO_REMOVE = [
@@ -76,7 +76,7 @@ def main():
             print(f"clean_student_readme: removed {label}")
         else:
             print(
-                f"clean_student_readme: WARNING -- {label} not found, left as-is (master's wording may have changed)",
+                f"clean_student_readme: WARNING -- {label} not found, left as-is (main's wording may have changed)",
                 file=sys.stderr,
             )
 
