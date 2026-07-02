@@ -1,10 +1,9 @@
 # Framing Talk Track (~8 minutes)
 
-Speaker notes for the opening of "From SHAP to AIFS -- Explainable AI for Weather and Climate"
-(working title). Written to be glanced at while presenting, not read verbatim.
+Speaker notes for the opening of "From SHAP to AIFS -- Explainable AI for Weather and Climate".
 
 Source: Dramsch, J.S. et al. (2025). "Explainability can foster trust in artificial
-intelligence in geoscience." *Nature Geoscience*. https://doi.org/10.1038/s41561-025-01639-x
+intelligence in geoscience." _Nature Geoscience_. https://doi.org/10.1038/s41561-025-01639-x
 
 ---
 
@@ -13,15 +12,15 @@ intelligence in geoscience." *Nature Geoscience*. https://doi.org/10.1038/s41561
 Quick show of hands: who here already uses a machine learning model in their work?
 
 Keep your hand up if you've ever had a colleague, reviewer, or forecaster ask
-*"why should I believe this?"*
+_"why should I believe this?"_
 
 That question is the whole talk.
 
 Think about natural hazards for a second.
 
-- Where should we anticipate tornadoes?
-- How early can we predict a volcanic eruption?
-- What determines flood susceptibility?
+-   Where should we anticipate tornadoes?
+-   How early can we predict a volcanic eruption?
+-   What determines flood susceptibility?
 
 If a model gives you an answer but not a reason -- would you act on it?
 Would your stakeholders?
@@ -35,7 +34,7 @@ Here's the pattern the paper describes.
 As AI models get more complex... they tend to get more skillful.
 
 But their interpretability -- from a physical, process-based perspective -- tends to
-go *down*.
+go _down_.
 
 More skill, less insight. That's the trade-off.
 
@@ -54,12 +53,12 @@ Not by making the model simpler. By making the model's reasoning visible.
 
 A useful mental image from the paper: XAI as a **magnifying lens**.
 
-It lets you look at your data *through the model's eyes*.
+It lets you look at your data _through the model's eyes_.
 
 Concretely, that's useful for:
 
-- Catching spurious correlations and data problems before they bite you
-- Surfacing input-prediction links worth a closer scientific look
+-   Catching spurious correlations and data problems before they bite you
+-   Surfacing input-prediction links worth a closer scientific look
 
 Real examples from the literature: landslide susceptibility studies, meteorological
 drought index studies -- where XAI outputs lined up with, and reinforced,
@@ -98,14 +97,14 @@ That's the gap this session is trying to help you personally close.
 
 The paper organizes XAI questions along three axes. Think of it as a Venn diagram.
 
-**Space** -- *where.* Where should we anticipate tornadoes?
+**Space** -- _where._ Where should we anticipate tornadoes?
 
-**Time** -- *when.* How early can an eruption be predicted?
+**Time** -- _when._ How early can an eruption be predicted?
 
-**Feature** -- *what.* What factors drive flooding susceptibility?
+**Feature** -- _what._ What factors drive flooding susceptibility?
 
-And they combine: *where and when* should we expect landslides?
-*Where* does low humidity contribute to wildfire risk?
+And they combine: _where and when_ should we expect landslides?
+_Where_ does low humidity contribute to wildfire risk?
 
 Keep this framework in your pocket for the next 45 minutes.
 
@@ -179,5 +178,5 @@ Let's get into it.
 Dramsch, J.S., Kuglitsch, M.M., Fernández-Torres, M.-Á., Toreti, A., Albayrak, R.A.,
 Nava, L., Ghaffarian, S., Cheng, X., Ma, J., Samek, W., Venguswamy, R., Koul, A.,
 Muthuregunathan, R. & Hrast Essenfelder, A. (2025). Explainability can foster trust
-in artificial intelligence in geoscience. *Nature Geoscience*.
+in artificial intelligence in geoscience. _Nature Geoscience_.
 https://doi.org/10.1038/s41561-025-01639-x
