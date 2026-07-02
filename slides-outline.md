@@ -137,11 +137,11 @@
 
 ---
 
-## 4. Part 2 — AIFS backward sensitivities (0:40–0:53, ~13 min) (title/context 2 + 5 artifact slides = 7 slides)
+## 4. Part 2 — AIFS backward sensitivities (0:40–0:53, ~13 min) (title/context/mechanism 3 + 4 result slides = 7 slides)
 
 ### Slide 20 — Part 2: title
 - "From perturbation to adjoint: sensitivities in an operational AI weather model"
-- Notebook: `02_aifs_sensitivities.ipynb` — offline-first, renders from committed `artifacts/images/`
+- Notebook: `02_aifs_sensitivities.ipynb` — offline-first, computed live from committed `artifacts/sensitivities_o48.npz` plus two pre-rendered PNGs
 - Source: ECMWF's internal 2025 ML training course (`ecmwf-training`), reused with instructor's authority as course contributor
 - `RUN_LIVE=False` by default — live AIFS inference optional, gated behind this flag
 
@@ -151,35 +151,33 @@
 - Method: backward sensitivities via `torch.autograd.functional.vjp` — classic reverse-mode automatic differentiation (adjoint / vector-Jacobian product)
 - Goal: which input variables / locations / levels most influenced that 2t forecast?
 
-### Slide 22 — Artifact: pressure-level summary
+### Slide 22 — How does this actually work?
+- Recreate (or screenshot) the notebook's mechanism diagram: forward pass (state -> AIFS -> forecast) vs backward pass (perturbation -> reverse-mode autodiff -> sensitivity map)
+- Say explicitly before showing any results: this is differentiating *through* the network, not querying it from outside
+- Land the callback line early: "the same operation as an adjoint model's gradient in 4D-Var"
+
+### Slide 23 — Artifact: pressure-level summary
 - `artifacts/images/01_pressure_level_summary.png`
 - Grid of heatmaps: rows = input hour offset (-6H / 0H), columns = min/max stat
 - Shows which pressure-level variables/levels have the largest-magnitude sensitivities overall
 - Purpose: overview before drilling into specific spatial maps
 
-### Slide 23 — Artifact: 2t self-sensitivity map
-- `artifacts/images/02_map_2t_sensitivity.png`
-- Global map(s), one per input timestep, PuOr diverging colormap
-- Self-consistency check: sensitivity should trace back near the perturbation point and along recent flow
-- Framing: "does the model's own explanation make physical sense?"
+### Slide 24 — Live demo: the interactive map (or screenshots if presenting without the notebook open)
+- Prefer switching to the live notebook here over a static slide -- the dropdown toggle is the point
+- If a static slide is unavoidable, use two screenshots side by side: `2t` (self-consistency check -- signal sits right on the perturbation point) and `z_500` (the "wow" cross-variable moment -- a paired +/- structure, not just a bigger blob)
+- Framing for `2t`: "does the model's own explanation make physical sense?"
+- Framing for `z_500`: a surface perturbation reaching into upper-air dynamics, structurally different from the self-check
 
-### Slide 24 — Artifact: z500 sensitivity, global
-- `artifacts/images/03_map_z500_sensitivity_global.png`
-- 500 hPa geopotential (z_500) sensitivity, global extent
-- Reveals upstream synoptic-scale structure / teleconnections influencing the 2t forecast
-- This is the "wow" cross-variable moment — a surface perturbation reaching into upper-air dynamics
-
-### Slide 25 — Artifact: z500 sensitivity, regional zoom
-- `artifacts/images/04_map_z500_sensitivity_regional.png`
-- Same z_500 sensitivity field, cropped to East Asia (~lon 100–140°E, lat 20–60°N)
-- Finer spatial detail around the perturbation point
-- Invites synoptic interpretation: ridges/troughs, flow features tied to the sensitivity pattern
-
-### Slide 26 — Artifact: temperature cross-section
+### Slide 25 — Artifact: temperature cross-section
 - `artifacts/images/05_cross_section_temperature.png`
 - Longitude-vs-pressure-level cross-section of temperature (t) sensitivity along 40.5°N
 - Slice passes directly through the perturbation point
 - Shows vertical structure of the backward sensitivity — boundary layer vs free troposphere
+
+### Slide 26 — Live demo: vertical profile and pressure-level flythrough
+- Vertical profile: sensitivity by pressure level at the single grid point closest to the perturbation -- normalised per variable, noisier than the maps (name that explicitly, it's a teaching point, not a flaw)
+- Pressure-level flythrough: animated across all 13 levels on a fixed colour scale -- press play once and narrate over it rather than waiting in silence
+- Both are first/second cut candidates if short on time (see `facilitator_notes.md`) -- if cutting for the slide deck too, this slide can be dropped without breaking the narrative arc
 
 ---
 
@@ -239,8 +237,8 @@
 | Framing (mirrors `00_framing/framing.md`) | 8 |
 | Part 1 setup | 2 |
 | Part 1 methods + exercises | 8 |
-| Part 2 title/context | 2 |
-| Part 2 artifacts | 5 |
+| Part 2 title/context/mechanism | 3 |
+| Part 2 results (map, cross-section, profile/animation demos) | 4 |
 | Bridge back | 1 |
 | Extensions pointer | 1 |
 | Wrap / resources / attribution / contact | 4 |

@@ -86,10 +86,12 @@ Suggested order below follows the notebook's naive-to-robust arc.
 
 ## 2. Part 2 extensions (`02_aifs_sensitivities.ipynb`)
 
-The core 60-minute session runs Part 2 fully offline, rendering the five pre-committed artifacts
-in `artifacts/images/`. For a longer slot with a reliable venue network, Part 2 can go fully
-hands-on by flipping the `RUN_LIVE` flag and having participants run live AIFS inference
-themselves, reproducing (and then varying) the artifacts instead of just viewing them.
+The core 60-minute session runs Part 2 fully offline, computing its interactive map, vertical
+profile, and pressure-level animation live from the committed `artifacts/sensitivities_o48.npz`
+array (plus two pre-rendered images in `artifacts/images/` for the two figures that need
+`cartopy`). For a longer slot with a reliable venue network, Part 2 can go fully hands-on by
+flipping the `RUN_LIVE` flag and having participants run live AIFS inference themselves,
+reproducing (and then varying) that array instead of just exploring the committed one.
 
 ### 2.1 Feasibility
 
