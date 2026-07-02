@@ -2,8 +2,8 @@ NOTICE
 ======
 
 This file describes the provenance of, and attribution for, material reused in
-the "xai-weather-workshop" repository ("From SHAP to AIFS -- Explainable AI
-for Weather and Climate", working title). The LICENSE file at the repository
+the "xai-weather-workshop" repository ("XAI in Geoscience: From Feature
+Importance to Adjoint Sensitivities"). The LICENSE file at the repository
 root (MIT, Copyright (c) 2026 Jesper Dramsch) covers only the original content
 created for this repository. It does not relicense the upstream material
 described below, which remains subject to its own terms as summarized here.

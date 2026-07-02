@@ -1,6 +1,6 @@
 # Framing Talk Track (~8 minutes)
 
-Speaker notes for the opening of "From SHAP to AIFS -- Explainable AI for Weather and Climate".
+Speaker notes for the opening of "XAI in Geoscience: From Feature Importance to Adjoint Sensitivities".
 
 Source: Dramsch, J.S. et al. (2025). "Explainability can foster trust in artificial
 intelligence in geoscience." _Nature Geoscience_. https://doi.org/10.1038/s41561-025-01639-x

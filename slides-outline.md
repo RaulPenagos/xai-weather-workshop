@@ -1,8 +1,7 @@
-# Slides Outline — "From SHAP to AIFS: Explainable AI for Weather and Climate"
+# Slides Outline — "XAI in Geoscience: From Feature Importance to Adjoint Sensitivities"
 
-> Working title (alternates under consideration: "Explaining the Black Box: From Penguins to Weather Models",
-> "XAI in Geoscience: From Feature Importance to Adjoint Sensitivities"). One slide per bullet-level entry below.
-> This is a build-the-deck-from outline: terse titles + 2-4 content notes per slide, not a script.
+> One slide per bullet-level entry below. This is a build-the-deck-from
+> outline: terse titles + 2-4 content notes per slide, not a script.
 >
 > Mirrors `00_framing/framing.md` for the framing section slide-breaks, then one slide per Part 1 method, artifact-image slides for Part 2,
 > a bridge-back slide, and a closing resources slide.
@@ -16,7 +15,7 @@
 ## 0. Title (1 slide)
 
 ### Slide 1 — Title
-- "From SHAP to AIFS: Explainable AI for Weather and Climate" (note: working title)
+- "XAI in Geoscience: From Feature Importance to Adjoint Sensitivities"
 - Subtitle: Climademics Summer School, 2026-07-03
 - Presenter name / ECMWF affiliation
 - Session badge: Part 1 hands-on (Colab) + Part 2 instructor demo

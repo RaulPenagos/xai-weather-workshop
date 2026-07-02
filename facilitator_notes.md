@@ -1,6 +1,6 @@
 # Facilitator Notes
 
-Instructor-facing notes for **"From SHAP to AIFS -- Explainable AI for Weather and Climate"** (working title), Climademics Summer School, 2026-07-03.
+Instructor-facing notes for **"XAI in Geoscience: From Feature Importance to Adjoint Sensitivities"**, Climademics Summer School, 2026-07-03.
 
 These notes are for the person running the session live. They are not participant-facing material -- do not project this file. For the framing talk track itself, see `00_framing/framing.md` (built separately). For the notebooks, see `01_classic_xai.ipynb` and `02_aifs_sensitivities.ipynb` (built separately) and `solutions/01_classic_xai_solutions.ipynb`.
 

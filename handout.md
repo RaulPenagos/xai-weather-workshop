@@ -1,6 +1,6 @@
-# From SHAP to AIFS — Explainable AI for Weather and Climate
+# XAI in Geoscience: From Feature Importance to Adjoint Sensitivities
 
-*Workshop handout — Climademics Summer School, 2026-07-03 (working title)*
+*Workshop handout — Climademics Summer School, 2026-07-03*
 
 ## Core message
 

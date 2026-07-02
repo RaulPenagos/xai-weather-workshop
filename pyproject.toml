@@ -1,7 +1,7 @@
 [project]
 name = "xai-weather-workshop"
 version = "0.1.0"
-description = "From SHAP to AIFS -- Explainable AI for Weather and Climate: a hands-on XAI workshop"
+description = "XAI in Geoscience: From Feature Importance to Adjoint Sensitivities -- a hands-on XAI workshop"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
 license = { text = "MIT" }
