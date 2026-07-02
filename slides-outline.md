@@ -4,8 +4,7 @@
 > "XAI in Geoscience: From Feature Importance to Adjoint Sensitivities"). One slide per bullet-level entry below.
 > This is a build-the-deck-from outline: terse titles + 2-4 content notes per slide, not a script.
 >
-> Mirrors `00_framing/framing.md` (being authored separately — not yet present in the repo as of this writing)
-> for the framing section slide-breaks, then one slide per Part 1 method, artifact-image slides for Part 2,
+> Mirrors `00_framing/framing.md` for the framing section slide-breaks, then one slide per Part 1 method, artifact-image slides for Part 2,
 > a bridge-back slide, and a closing resources slide.
 >
 > **Estimated total: 33 slides** (title 1 + framing 8 + Part 1 setup/transition 2 + Part 1 methods 4 + Part 1
@@ -117,7 +116,7 @@
 
 ### Slide 16 — Method 3: PDP / ICE
 - **Question it answers**: how does the prediction change as one feature varies, on average (PDP) and per-instance (ICE)?
-- **Worked example**: average response curves + individual ICE curves for a bill/culmen feature (historical source only showed averages — this rebuild adds real ICE)
+- **Worked example**: average response curves (PDP) plus individual per-instance curves (ICE) for a bill/culmen feature
 - **Where it misleads you**: averaging (PDP) hides interactions between features; curves extrapolate into empty/sparse regions of feature space
 
 ### Slide 17 — Exercise 3
@@ -171,13 +170,13 @@
 
 ### Slide 25 — Live demo: the interactive map (or screenshots if presenting without the notebook open)
 - Prefer switching to the live notebook here over a static slide -- the dropdown toggle is the point
-- If a static slide is unavoidable, use two screenshots side by side: `2t` (self-consistency check -- signal sits right on the perturbation point) and `z_500` (the "wow" cross-variable moment -- a paired +/- structure, not just a bigger blob)
+- If a static slide is unavoidable, use two screenshots side by side: `2t` (self-consistency check -- signal sits right on the perturbation point) and `z_500` (a paired +/- structure spanning a wide area, structurally different from the tightly localized 2t signal)
 - Framing for `2t`: "does the model's own explanation make physical sense?"
 - Framing for `z_500`: a surface perturbation reaching into upper-air dynamics, structurally different from the self-check
 
 ### Slide 26 — Artifact: temperature cross-section
 - `artifacts/images/05_cross_section_temperature.png`
-- Longitude-vs-pressure-level cross-section of temperature (t) sensitivity along 40.5°N
+- Longitude-vs-pressure-level cross-section of temperature (t) sensitivity along 40.5°N (the nearest O48 grid latitude to the 40°N perturbation point)
 - Slice passes directly through the perturbation point
 - Shows vertical structure of the backward sensitivity — boundary layer vs free troposphere
 
@@ -190,8 +189,8 @@
 
 ## 5. Bridge back to Part 1 (1 slide)
 
-### Slide 28 — The "aha": you already know this
-- Permutation importance & SHAP: perturbation-based, model-agnostic — probe the model with input changes, treat it as a black box
+### Slide 28 — Bridge back: you already know this
+- Permutation importance, PDP/ICE & SHAP: perturbation-based, model-agnostic — probe the model with input changes, treat it as a black box
 - Backward/adjoint sensitivities: gradient-based, model-aware — require access to internals via automatic differentiation
 - Adjoint sensitivities are old friends: 4D-Var data assimilation, adjoint modelling in NWP
 - Punchline: your existing sensitivity-analysis expertise transfers directly to XAI — this is not a new skill, it's a new application

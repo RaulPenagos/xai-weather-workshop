@@ -14,8 +14,6 @@ Quick show of hands: who here already uses a machine learning model in their wor
 Keep your hand up if you've ever had a colleague, reviewer, or forecaster ask
 _"why should I believe this?"_
 
-That question is the whole talk.
-
 Think about natural hazards for a second.
 
 -   Where should we anticipate tornadoes?
@@ -163,7 +161,6 @@ build careful intuition for four classic XAI methods, including where each one
 misleads you.
 
 **Part 2** -- the same thinking, applied to a real, operational AI weather model.
-Same questions, much bigger system.
 
 If you take one thing from this framing: the skills transfer. What you learn on
 penguins in the next half hour is directly the lens we'll use on a state-of-the-art

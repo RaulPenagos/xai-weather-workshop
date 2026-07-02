@@ -48,9 +48,9 @@ field (z_500), global view. Structure well upstream of the perturbation
 point traces out the synoptic-scale flow feeding into the forecast — the
 same kind of teleconnection pattern a forecaster would look for by eye.*
 
-**The bridge back.** Permutation importance and SHAP are *perturbation-based*
-and *model-agnostic*: they probe a model by changing inputs and watching the
-output, treating the model as a black box. Backward/adjoint sensitivities
+**The bridge back.** Permutation importance, PDP/ICE, and SHAP are
+*perturbation-based* and *model-agnostic*: they probe a model by changing
+inputs and watching the output, treating the model as a black box. Backward/adjoint sensitivities
 are *gradient-based* and *model-aware*: they require access to the model's
 internals via automatic differentiation, exactly as adjoint models in NWP
 and 4D-Var require the tangent-linear/adjoint of the forecast operator. If
@@ -58,11 +58,11 @@ you already think in terms of sensitivities and adjoints from data
 assimilation, you already know how to think about this class of XAI method
 — the transfer is direct, not metaphorical.
 
-In the live session, a hands-on exercise lets participants feel this
-directly on a tiny 2-input feedforward network, in two acts: first an
-ordinary forward pass (drag the inputs, watch the output respond), then a
-backward pass at that same point, where the one slider left is literally
-the same output perturbation AIFS's code sets to 1.0 — dragging it scales
+In the live session, a hands-on exercise covers this on a tiny 2-input
+feedforward network: first a forward pass (drag the inputs, watch the
+output respond), then a backward pass at that same point, where the one
+slider left is literally the same output perturbation AIFS's code sets to
+1.0 — dragging it scales
 every sensitivity proportionally, which is the whole content of a "unit"
 perturbation.
 

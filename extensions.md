@@ -142,7 +142,7 @@ source ECMWF 2025 ML training course notebook (`5-xAI-with-AIFS/explain_AIFS-cpu
 ### 2.3 Suggested framing for the hands-on version
 
 Keep the bridge-back-to-Part-1 message central even in the extended version: permutation
-importance and SHAP are perturbation-based and model-agnostic (probe the model from the outside),
+importance, PDP/ICE, and SHAP are perturbation-based and model-agnostic (probe the model from the outside),
 while backward/adjoint sensitivities are gradient-based and model-aware (require access to
 internals via automatic differentiation). Tasks 5.1/5.2 are literally perturbation experiments on
 a gradient-based method, which is a good opportunity to make that contrast concrete: participants

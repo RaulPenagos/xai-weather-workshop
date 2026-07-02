@@ -18,8 +18,8 @@ reasoning rather than accepting its output on faith (Dramsch et al., 2025,
 observation: much of the thinking behind XAI is not new to geoscientists.
 Sensitivity and adjoint methods from numerical weather prediction (NWP) and
 data assimilation transfer directly to modern gradient-based explainability
-techniques. Part 1 builds a foundation in classic, model-agnostic XAI methods
-on a deliberately simple tabular dataset. Part 2 applies that same thinking
+techniques. Part 1 builds a foundation in classic XAI methods -- most of
+them model-agnostic -- on a deliberately simple tabular dataset. Part 2 applies that same thinking
 to a state-of-the-art operational AI weather model, closing the loop back to
 adjoint sensitivities that many NWP practitioners already know well. The
 intended audience is climate, geoscience, and epidemiology researchers who
