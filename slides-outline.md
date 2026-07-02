@@ -156,12 +156,12 @@
 - Say explicitly before showing any results: this is differentiating *through* the network, not querying it from outside
 - Land the callback line early: "the same operation as an adjoint model's gradient in 4D-Var"
 
-### Slide 23 — Live demo: forward vs. backward, a network small enough to hand-differentiate (or screenshots if presenting without the notebook open)
-- Prefer switching to the live notebook here over a static slide -- the point is that dragging forward takes four separate passes and backward takes one
-- Tiny hand-differentiated network: 4 independent scalar inputs, each its own tanh hidden unit, summed into 1 linear output; weights hand-picked so units saturate at different input values -- self-contained, offline, no GPU/autograd library
-- Forward-mode widget: one 244-step slider that is genuinely four sliders end to end (61 steps per input) -- each segment varies only one input (others pinned at 0) and reveals only that one input's sensitivity; land explicitly that you need all four segments to learn what backward gets in one
-- Backward-mode widget: one 61-step slider moving all four inputs together; one pass reveals all four sensitivities at once (network diagram + bar chart), regardless of how many inputs there are -- this is the entire reason AIFS uses backward mode (millions of inputs, one perturbed output)
-- Teaching point carried over from both: near saturation, edges go thin -- low sensitivity -- even though activations are near their extremes; gradient-based sensitivity is state-dependent, which is why every AIFS sensitivity figure elsewhere in this notebook is specific to one perturbation at one moment, not a universal statement about the model
+### Slide 23 — Live demo: a network small enough to hand-differentiate (or screenshots if presenting without the notebook open)
+- Prefer switching to the live notebook here over a static slide -- three sliders is the point
+- Real feedforward network: 2 inputs, fully connected to 4 tanh hidden units, summed into 1 linear output -- self-contained, offline, no GPU/autograd library
+- `x1`/`x2` sliders: move where you are in input space; the diagram always shows the *complete* backward-computed picture (both inputs' edges into all four hidden units, both aggregate sensitivities in the bar chart) regardless of which slider moved -- that completeness, always, is what backward mode gives you
+- `output perturbation v` slider: this *is* the `v` from AIFS's actual perturbation code (a unit nudge, `v=1.0`) -- dragging it scales every edge and bar proportionally (try v=2: everything doubles), because a backward pass is linear in the output perturbation size chosen
+- Teaching points: saturation still holds (push x1 or x2 past about +-2, their edges thin even though the hidden units they feed are near +1/-1 -- sensitivity is state-dependent); and this widget's mechanics are literally the AIFS notebook's mechanics at 2 inputs instead of millions
 
 ### Slide 24 — Artifact: pressure-level summary
 - `artifacts/images/01_pressure_level_summary.png`
