@@ -156,12 +156,12 @@
 - Say explicitly before showing any results: this is differentiating *through* the network, not querying it from outside
 - Land the callback line early: "the same operation as an adjoint model's gradient in 4D-Var"
 
-### Slide 23 — Live demo: a network small enough to hand-differentiate (or screenshots if presenting without the notebook open)
-- Prefer switching to the live notebook here over a static slide -- three sliders is the point
+### Slide 23 — Live demo: a network small enough to hand-differentiate, in two acts (or screenshots if presenting without the notebook open)
+- Prefer switching to the live notebook here over a static slide
 - Real feedforward network: 2 inputs, fully connected to 4 tanh hidden units, summed into 1 linear output -- self-contained, offline, no GPU/autograd library
-- `x1`/`x2` sliders: move where you are in input space; the diagram always shows the *complete* backward-computed picture (both inputs' edges into all four hidden units, both aggregate sensitivities in the bar chart) regardless of which slider moved -- that completeness, always, is what backward mode gives you
-- `output perturbation v` slider: this *is* the `v` from AIFS's actual perturbation code (a unit nudge, `v=1.0`) -- dragging it scales every edge and bar proportionally (try v=2: everything doubles), because a backward pass is linear in the output perturbation size chosen
-- Teaching points: saturation still holds (push x1 or x2 past about +-2, their edges thin even though the hidden units they feed are near +1/-1 -- sensitivity is state-dependent); and this widget's mechanics are literally the AIFS notebook's mechanics at 2 inputs instead of millions
+- Act 1, forward pass: `x1`/`x2` sliders move where you are in input space; watch `y` respond (ordinary forward pass) while the sensitivity bar chart rides along as a preview
+- Act 2, backward pass: fixed at the same point Act 1 started from, one slider only -- `output perturbation v`, exactly the `v` from AIFS's actual perturbation code (a unit nudge, `v=1.0`). x1, x2, and y correctly never move here (they're the real state, v is a hypothetical question, not a fourth node) -- a coloured halo around `y`, sized by `|v|`, is the only thing that visually represents v itself. Dragging it scales every edge and bar proportionally (try v=2: everything doubles) because a backward pass is linear in the output perturbation size chosen
+- Teaching points: saturation still holds in Act 1 (push x1 or x2 past about +-2, their edges thin even though the hidden units they feed are near +1/-1 -- sensitivity is state-dependent); Act 2's mechanics are literally the AIFS notebook's mechanics at 2 inputs instead of millions
 
 ### Slide 24 — Artifact: pressure-level summary
 - `artifacts/images/01_pressure_level_summary.png`

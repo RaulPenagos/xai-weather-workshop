@@ -58,12 +58,12 @@ you already think in terms of sensitivities and adjoints from data
 assimilation, you already know how to think about this class of XAI method
 — the transfer is direct, not metaphorical.
 
-In the live session, a hands-on widget lets participants feel this
-directly on a tiny 2-input feedforward network: two sliders move the
-input state (the diagram always shows the complete backward-computed
-picture, whichever one moves), and a third slider is literally the same
-output perturbation AIFS's code sets to 1.0 — dragging it scales every
-sensitivity proportionally, which is the whole content of a "unit"
+In the live session, a hands-on exercise lets participants feel this
+directly on a tiny 2-input feedforward network, in two acts: first an
+ordinary forward pass (drag the inputs, watch the output respond), then a
+backward pass at that same point, where the one slider left is literally
+the same output perturbation AIFS's code sets to 1.0 — dragging it scales
+every sensitivity proportionally, which is the whole content of a "unit"
 perturbation.
 
 ## Go further
