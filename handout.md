@@ -58,6 +58,10 @@ you already think in terms of sensitivities and adjoints from data
 assimilation, you already know how to think about this class of XAI method
 — the transfer is direct, not metaphorical.
 
+In the live session, a hands-on widget lets participants drag the input of
+a tiny hand-differentiated toy network and watch its sensitivity update in
+real time — a tactile complement to the AIFS figures shown here.
+
 ## Go further
 
 - **ml.recipes** (Part 1 methodology basis): Dramsch, J. S., & Maggio, V.

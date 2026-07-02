@@ -8,9 +8,9 @@
 > for the framing section slide-breaks, then one slide per Part 1 method, artifact-image slides for Part 2,
 > a bridge-back slide, and a closing resources slide.
 >
-> **Estimated total: 34 slides** (title 1 + framing 8 + Part 1 setup/transition 2 + Part 1 methods 4 + Part 1
-> exercises 4 + Part 2 title/context 2 + Part 2 artifacts 5 + bridge-back 1 + extensions 1 + wrap/resources 2
-> + buffer/contact 4 — see per-section counts below for exact breakdown).
+> **Estimated total: 33 slides** (title 1 + framing 8 + Part 1 setup/transition 2 + Part 1 methods 4 + Part 1
+> exercises 4 + Part 2 title/context 2 + Part 2 artifacts 6 + bridge-back 1 + extensions 1 + wrap/resources/contact 4
+> — see per-section counts below for exact breakdown).
 
 ---
 
@@ -137,7 +137,7 @@
 
 ---
 
-## 4. Part 2 — AIFS backward sensitivities (0:40–0:53, ~13 min) (title/context/mechanism 3 + 4 result slides = 7 slides)
+## 4. Part 2 — AIFS backward sensitivities (0:40–0:53, ~13 min) (title/context/mechanism 3 + 5 result slides = 8 slides)
 
 ### Slide 20 — Part 2: title
 - "From perturbation to adjoint: sensitivities in an operational AI weather model"
@@ -156,25 +156,32 @@
 - Say explicitly before showing any results: this is differentiating *through* the network, not querying it from outside
 - Land the callback line early: "the same operation as an adjoint model's gradient in 4D-Var"
 
-### Slide 23 — Artifact: pressure-level summary
+### Slide 23 — Live demo: try it yourself, a network small enough to hand-differentiate (or screenshots if presenting without the notebook open)
+- Prefer switching to the live notebook here over a static slide -- dragging the slider is the point
+- If a static slide is unavoidable, use two screenshots side by side: one input value where hidden units are mid-range (edges thick) and one near saturation (edges thin, near +/-1)
+- Tiny hand-differentiated network: 1 scalar input, 4 tanh hidden units, 1 linear output; weights hand-picked so hidden units saturate at different input values -- self-contained, offline, no GPU/autograd library, ~15 lines of hand-derived numpy calculus
+- Node colour = activation, edge thickness = contribution to dy/dx (red = pushes output up, blue = pushes output down); side panel shows dy/dx vs x with a marker at the current position
+- Teaching point: near saturation, edges go thin -- low sensitivity -- even though activations are near their extremes; gradient-based sensitivity is state-dependent, which is why every AIFS sensitivity figure elsewhere in this notebook is specific to one perturbation at one moment, not a universal statement about the model
+
+### Slide 24 — Artifact: pressure-level summary
 - `artifacts/images/01_pressure_level_summary.png`
 - Grid of heatmaps: rows = input hour offset (-6H / 0H), columns = min/max stat
 - Shows which pressure-level variables/levels have the largest-magnitude sensitivities overall
 - Purpose: overview before drilling into specific spatial maps
 
-### Slide 24 — Live demo: the interactive map (or screenshots if presenting without the notebook open)
+### Slide 25 — Live demo: the interactive map (or screenshots if presenting without the notebook open)
 - Prefer switching to the live notebook here over a static slide -- the dropdown toggle is the point
 - If a static slide is unavoidable, use two screenshots side by side: `2t` (self-consistency check -- signal sits right on the perturbation point) and `z_500` (the "wow" cross-variable moment -- a paired +/- structure, not just a bigger blob)
 - Framing for `2t`: "does the model's own explanation make physical sense?"
 - Framing for `z_500`: a surface perturbation reaching into upper-air dynamics, structurally different from the self-check
 
-### Slide 25 — Artifact: temperature cross-section
+### Slide 26 — Artifact: temperature cross-section
 - `artifacts/images/05_cross_section_temperature.png`
 - Longitude-vs-pressure-level cross-section of temperature (t) sensitivity along 40.5°N
 - Slice passes directly through the perturbation point
 - Shows vertical structure of the backward sensitivity — boundary layer vs free troposphere
 
-### Slide 26 — Live demo: vertical profile and pressure-level flythrough
+### Slide 27 — Live demo: vertical profile and pressure-level flythrough
 - Vertical profile: sensitivity by pressure level at the single grid point closest to the perturbation -- normalised per variable, noisier than the maps (name that explicitly, it's a teaching point, not a flaw)
 - Pressure-level flythrough: animated across all 13 levels on a fixed colour scale -- press play once and narrate over it rather than waiting in silence
 - Both are first/second cut candidates if short on time (see `facilitator_notes.md`) -- if cutting for the slide deck too, this slide can be dropped without breaking the narrative arc
@@ -183,7 +190,7 @@
 
 ## 5. Bridge back to Part 1 (1 slide)
 
-### Slide 27 — The "aha": you already know this
+### Slide 28 — The "aha": you already know this
 - Permutation importance & SHAP: perturbation-based, model-agnostic — probe the model with input changes, treat it as a black box
 - Backward/adjoint sensitivities: gradient-based, model-aware — require access to internals via automatic differentiation
 - Adjoint sensitivities are old friends: 4D-Var data assimilation, adjoint modelling in NWP
@@ -193,7 +200,7 @@
 
 ## 6. Extensions pointer (0:53–0:55, ~2 min) (1 slide)
 
-### Slide 28 — If we had 90–120 minutes
+### Slide 29 — If we had 90–120 minutes
 - Part 1 hands-on extensions (see `extensions.md`): counterfactuals, LIME comparison, fairness/robustness probes
 - Part 2 hands-on extensions: live `RUN_LIVE=True` inference, perturb a different variable/location, compare lead times
 - Cross-cutting: quantitative benchmarking of XAI methods against each other (per the paper's "Resources" recommendation)
@@ -203,25 +210,25 @@
 
 ## 7. Wrap (0:55–1:00, ~5 min) (2 slides + buffer/contact = 4 slides total)
 
-### Slide 29 — Recap: the arc
+### Slide 30 — Recap: the arc
 - Framing: adoption gap is real, XAI builds trust, four recommendations (Demand / Resources / Partnerships / Integration)
 - Part 1: naive -> robust XAI on a simple tabular problem — impurity, permutation, PDP/ICE, SHAP
 - Part 2: same thinking, operational AI weather model — adjoint sensitivities via automatic differentiation
 - Core message: your domain expertise transfers; XAI is a lens, not a black box unto itself
 
-### Slide 30 — Resources
+### Slide 31 — Resources
 - Part 1 basis: ml.recipes — https://github.com/JesperDramsch/ml-for-science-reproducibility-tutorial (Dramsch & Maggio, 2022, MIT License)
 - Framing paper: Dramsch et al. (2025), *Nature Geoscience*, https://doi.org/10.1038/s41561-025-01639-x
 - Workshop repo: `github.com/jesperdramsch/xai-weather-workshop`
 - Palmer Penguins data: Dr. Kristen Gorman & Palmer Station Antarctica LTER; `palmerpenguins` package by Muhammad Chenariyan Nakhaee (MIT)
 
-### Slide 31 — Acknowledgements / attribution
+### Slide 32 — Acknowledgements / attribution
 - Part 2 materials: ECMWF / ecmwf-training course materials (2025 ML training course), reused with instructor's authority as course contributor
 - `perturbation.py`, `sensitivities.py`: Apache-2.0, Copyright 2024 Anemoi contributors (from `anemoi-inference`)
 - Nature Geoscience Comment: Dramsch, Kuglitsch, Fernández-Torres, Toreti, Albayrak, Nava, Ghaffarian, Cheng, Ma, Samek, Venguswamy, Koul, Muthuregunathan & Hrast Essenfelder (2025)
 - This repo: MIT License, Copyright (c) 2026 Jesper Dramsch
 
-### Slide 32 — Questions / contact
+### Slide 33 — Questions / contact
 - Contact: ai-in-public-health@rki.de
 - Questions welcome now, or via repo issues once pushed
 - Colab links for Part 1 notebook (`jesperdramsch/xai-weather-workshop`)
@@ -238,13 +245,13 @@
 | Part 1 setup | 2 |
 | Part 1 methods + exercises | 8 |
 | Part 2 title/context/mechanism | 3 |
-| Part 2 results (map, cross-section, profile/animation demos) | 4 |
+| Part 2 results (hand-differentiated widget, map, cross-section, profile/animation demos) | 5 |
 | Bridge back | 1 |
 | Extensions pointer | 1 |
 | Wrap / resources / attribution / contact | 4 |
-| **Total** | **32** |
+| **Total** | **33** |
 
-(Text above the table estimated ~34 accounting for possible title/section-divider slides between Parts 1 and 2 in the final deck; treat 32–34 as the working range — add divider slides freely if the deck tool benefits from them, e.g. a bare "Part 1" and "Part 2" section-break slide, which would bring the total to 34.)
+(33 is the base count above. Treat 33-35 as the working range if you add optional title/section-divider slides between Parts 1 and 2 in the final deck -- e.g. a bare "Part 1" and "Part 2" section-break slide, which would bring the total to 35.)
 
 ---
 
