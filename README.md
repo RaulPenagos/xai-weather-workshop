@@ -1,10 +1,7 @@
-# From SHAP to AIFS -- Explainable AI for Weather and Climate
-
-*(working title; alternates under consideration: "Explaining the Black Box: From Penguins to Weather Models", "XAI in Geoscience: From Feature Importance to Adjoint Sensitivities")*
+# XAI in Geoscience: From Feature Importance to Adjoint Sensitivities
 
 A 60-minute hands-on workshop introducing explainable AI (XAI) methods to a
-geoscience audience, taught at the Climademics Summer School on 2026-07-03.
-<!-- TODO: link the event's official page here once confirmed. -->
+geoscience audience, taught at the [Climademic Summer School on 2026-07-03](https://www.rki.de/SharedDocs/Termine/EN/ZKI-PH/CLIMADEMIC_Summer_School_2026.html?nn=16781230).
 
 ## Who this is for, and why
 
@@ -13,8 +10,8 @@ more skillful, their interpretability from a physical perspective tends to
 decrease -- and in high-stakes settings such as natural hazard forecasting,
 that opacity can erode trust and slow adoption. Explainable AI (XAI) methods
 address this by giving domain experts a way to interrogate a model's
-reasoning rather than accepting its output on faith (Dramsch et al., 2025,
-*Nature Geoscience*). This workshop is built around a second, complementary
+reasoning rather than accepting its output on faith ([Dramsch et al.](https://dramsch.net/research), 2025,
+_Nature Geoscience_). This workshop is built around a second, complementary
 observation: much of the thinking behind XAI is not new to geoscientists.
 Sensitivity and adjoint methods from numerical weather prediction (NWP) and
 data assimilation transfer directly to modern gradient-based explainability
@@ -28,13 +25,13 @@ prior XAI background.
 
 ## Prerequisites
 
-- Basic familiarity with Python, pandas, and scikit-learn (e.g. training a
-  classifier, working with a DataFrame). No prior XAI experience is assumed.
-- A Google account, if using Colab (recommended, see below).
-- No account or install is required if using Binder instead.
-- No GPU is required. Part 2 renders entirely from pre-committed artifacts by
-  default; live model inference is optional and off unless explicitly
-  enabled.
+-   Basic familiarity with Python, pandas, and scikit-learn (e.g. training a
+    classifier, working with a DataFrame). No prior XAI experience is assumed.
+-   A Google account, if using Colab (recommended, see below).
+-   No account or install is required if using Binder instead.
+-   No GPU is required. Part 2 renders entirely from pre-committed artifacts by
+    default; live model inference is optional and off unless explicitly
+    enabled.
 
 ## Setup
 
@@ -42,20 +39,20 @@ prior XAI background.
 click the yellow badge for the notebook you want. The other badges are
 optional convenience alternatives; most (Gradient, SageMaker Studio Lab,
 Deepnote) need their own account, so **Binder remains the true no-account
-fallback** if you don't have a Google account (see below).
+fallback** if you don't have a Google account.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD)
 
-**Part 1 -- Classic XAI (guided exercise):** `01_classic_xai.ipynb`
+**Part 1 -- Classic XAI exercises:** `01_classic_xai.ipynb`
 [![](https://img.shields.io/badge/view-notebook-orange)](01_classic_xai.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=01_classic_xai.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2F01_classic_xai.ipynb)
 
 **Part 1 solutions:** `solutions/01_classic_xai_solutions.ipynb`
 [![](https://img.shields.io/badge/view-notebook-orange)](solutions/01_classic_xai_solutions.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=solutions/01_classic_xai_solutions.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2Fsolutions%2F01_classic_xai_solutions.ipynb)
 
-**Part 2 -- AIFS sensitivities (instructor demo):** `02_aifs_sensitivities.ipynb`
+**Part 2 -- AIFS sensitivities interactive demo:** `02_aifs_sensitivities.ipynb`
 [![](https://img.shields.io/badge/view-notebook-orange)](02_aifs_sensitivities.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=02_aifs_sensitivities.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2F02_aifs_sensitivities.ipynb)
 
-Each notebook installs its own dependencies in the first cell (Colab/Binder/etc.), so any badge above gets you to a working environment without a local install.
+Each notebook installs its own dependencies in the first cell (Colab/Binder/etc.), so any badge above gets you to a working environment without a local install or downloads.
 
 ### Binder details
 
@@ -80,25 +77,25 @@ fully reproducible environment).
 
 ## Repository layout
 
-- `00_framing/` -- talk track and material for the opening framing
-  discussion, drawn from Dramsch et al. (2025).
-- `01_classic_xai.ipynb` -- Part 1: guided exercise on classic XAI methods
-  (tree importance, permutation importance, PDP/ICE, SHAP) using the Palmer
-  Penguins dataset.
-- `02_aifs_sensitivities.ipynb` -- Part 2: instructor demo of backward
-  (adjoint) sensitivities in ECMWF's AIFS weather model.
-- `solutions/` -- worked solutions to the Part 1 exercises.
-- `artifacts/` -- pre-rendered images and data used so Part 2 runs
-  offline-first, without requiring live model inference.
-- `facilitator_notes.md` -- timing, delivery notes, and tips for whoever
-  teaches this session.
-- `slides-outline.md` -- outline for accompanying slides.
-- `handout.md` -- a leave-behind reference summarizing the methods covered.
-- `extensions.md` -- pointers for what a longer (90-120 min) version of this
-  session would add.
-- `pyproject.toml` -- pinned Python dependencies (uv-compatible).
-- `LICENSE` -- MIT license for this repository.
-- `NOTICE` -- third-party attribution notices (see Licensing below).
+-   `00_framing/` -- talk track and material for the opening framing
+    discussion, drawn from Dramsch et al. (2025).
+-   `01_classic_xai.ipynb` -- Part 1: guided exercise on classic XAI methods
+    (tree importance, permutation importance, PDP/ICE, SHAP) using the Palmer
+    Penguins dataset.
+-   `02_aifs_sensitivities.ipynb` -- Part 2: instructor demo of backward
+    (adjoint) sensitivities in ECMWF's AIFS weather model.
+-   `solutions/` -- worked solutions to the Part 1 exercises.
+-   `artifacts/` -- pre-rendered images and data used so Part 2 runs
+    offline-first, without requiring live model inference.
+-   `facilitator_notes.md` -- timing, delivery notes, and tips for whoever
+    teaches this session.
+-   `slides-outline.md` -- outline for accompanying slides.
+-   `handout.md` -- a leave-behind reference summarizing the methods covered.
+-   `extensions.md` -- pointers for what a longer (90-120 min) version of this
+    session could add.
+-   `pyproject.toml` -- pinned Python dependencies.
+-   `LICENSE` -- MIT license for this repository.
+-   `NOTICE` -- third-party attribution notices (see Licensing below).
 
 ## Licensing and attribution
 
@@ -112,10 +109,11 @@ from other sources, credited below and in [`NOTICE`](NOTICE).
 Dramsch. Per that repository's `CITATION.cff`, both original authors should
 be credited:
 
-> Dramsch, J. S., & Maggio, V. (2022). *ML Recipes - Increase citations, ease
-> review & foster collaboration* (Version PyData-Global-2022) [Computer
-> software]. https://github.com/JesperDramsch/ml-for-science-reproducibility-tutorial
-> Zenodo: https://doi.org/10.5281/zenodo.10381234
+> Dramsch, J. S., & Maggio, V. (2022). _ML Recipes - Increase citations, ease
+> review & foster collaboration_ (Version PyData-Global-2022) [Computer
+>
+> > software]. https://github.com/JesperDramsch/ml-for-science-reproducibility-tutorial
+> > Zenodo: https://doi.org/10.5281/zenodo.10381234
 
 The Palmer Penguins dataset used throughout Part 1 is due to Dr. Kristen
 Gorman and the Palmer Station, Antarctica Long Term Ecological Research
@@ -141,7 +139,7 @@ that header is preserved wherever those files appear.
 > Albayrak, R.A., Nava, L., Ghaffarian, S., Cheng, X., Ma, J., Samek, W.,
 > Venguswamy, R., Koul, A., Muthuregunathan, R. & Hrast Essenfelder, A.
 > (2025). Explainability can foster trust in artificial intelligence in
-> geoscience. *Nature Geoscience*.
+> geoscience. _Nature Geoscience_.
 > https://doi.org/10.1038/s41561-025-01639-x
 
 See [`NOTICE`](NOTICE) for the consolidated third-party attribution notice.
@@ -156,10 +154,10 @@ contributing.
 
 If you use or adapt material from this workshop, please cite it as:
 
-> Dramsch, J. S. (2026). *From SHAP to AIFS -- Explainable AI for Weather and
-> Climate* [Workshop materials]. Climademics Summer School.
+> Dramsch, J. S. (2026). _XAI in Geoscience: From Feature Importance to Adjoint
+> Sensitivities_ [Workshop materials]. Climademics Summer School.
 > https://github.com/jesperdramsch/xai-weather-workshop
 
 and, for the conceptual framing this workshop is built around, please also
-cite Dramsch et al. (2025), *Nature Geoscience*,
+browse and maybe even cite Dramsch et al. (2025), _Nature Geoscience_,
 https://doi.org/10.1038/s41561-025-01639-x.
