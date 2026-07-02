@@ -9,10 +9,6 @@ This document lists what to add for a 90-minute or 120-minute variant, split by 
 suggested extended timing tables. Nothing here changes the 60-minute core; everything below is
 additive.
 
-> Colab/Binder badge URLs throughout this repo use the confirmed GitHub path
-> `jesperdramsch/xai-weather-workshop`. The repo still needs to be pushed for those links to
-> resolve.
-
 ---
 
 ## 1. Part 1 extensions (`01_classic_xai.ipynb`)

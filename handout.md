@@ -73,8 +73,6 @@ assimilation, you already know how to think about this class of XAI method
   https://doi.org/10.1038/s41561-025-01639-x
 - **This workshop's repository** (notebooks, solutions, artifacts):
   `github.com/jesperdramsch/xai-weather-workshop`
-  *(not yet pushed publicly as of this writing — push before distributing
-  this handout so the link resolves.)*
 
 ---
 *Palmer Penguins data: Dr. Kristen Gorman and the Palmer Station, Antarctica
