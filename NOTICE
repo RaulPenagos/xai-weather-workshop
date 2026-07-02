@@ -93,13 +93,14 @@ Package credit -- palmerpenguins (PyPI):
 (b) PART 2 BASIS: ECMWF / ecmwf-training 2025 ML training course materials
 ------------------------------------------------------------------------
 
-02_aifs_sensitivities.ipynb and the pre-rendered artifacts in
-artifacts/images/ (01_pressure_level_summary.png, 02_map_2t_sensitivity.png,
-03_map_z500_sensitivity_global.png, 04_map_z500_sensitivity_regional.png,
-05_cross_section_temperature.png) are reused and adapted from ECMWF's
-internal 2025 ML training course, specifically the notebook
-5-xAI-with-AIFS/explain_AIFS-cpu.ipynb in the GitHub organization
-ecmwf-training (repository: 2025-ml-training).
+02_aifs_sensitivities.ipynb, the pre-rendered images in artifacts/images/
+(01_pressure_level_summary.png and 05_cross_section_temperature.png), and
+the underlying data array artifacts/sensitivities_o48.npz (from which the
+notebook's interactive map, vertical profile, and pressure-level animation
+are computed live) are reused and adapted from ECMWF's internal 2025 ML
+training course, specifically the notebook
+5-xAI-with-AIFS/explain_AIFS-cpu.ipynb (and its committed sensitivities.npz)
+in the GitHub organization ecmwf-training (repository: 2025-ml-training).
 
 License status of the source repository: no public LICENSE file exists in
 that repository. This material is reused here with the direct authority of
