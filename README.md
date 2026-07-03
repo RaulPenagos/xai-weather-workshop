@@ -1,3 +1,10 @@
+> **You're on the `student` branch.** Solutions and facilitator-only
+> materials (`solutions/`, `facilitator_notes.md`, `slides-outline.md`,
+> `00_framing/framing.md`) live on `main` -- this branch mirrors
+> everything else and is kept in sync automatically. This banner and the
+> branch content are regenerated on every push to `main`; don't edit
+> this branch directly, edit `main` instead.
+
 # XAI in Geoscience: From Feature Importance to Adjoint Sensitivities
 
 A 60-minute hands-on workshop introducing explainable AI (XAI) methods to a
@@ -45,9 +52,6 @@ fallback** if you don't have a Google account.
 
 **Part 1 -- Classic XAI exercises:** `01_classic_xai.ipynb`
 [![](https://img.shields.io/badge/view-notebook-orange)](01_classic_xai.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=01_classic_xai.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/01_classic_xai.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2F01_classic_xai.ipynb)
-
-**Part 1 solutions:** `solutions/01_classic_xai_solutions.ipynb`
-[![](https://img.shields.io/badge/view-notebook-orange)](solutions/01_classic_xai_solutions.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=solutions/01_classic_xai_solutions.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/solutions/01_classic_xai_solutions.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2Fsolutions%2F01_classic_xai_solutions.ipynb)
 
 **Part 2 -- AIFS sensitivities interactive demo:** `02_aifs_sensitivities.ipynb`
 [![](https://img.shields.io/badge/view-notebook-orange)](02_aifs_sensitivities.ipynb) [![](https://img.shields.io/badge/open-colab-yellow)](https://colab.research.google.com/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jesperdramsch/xai-weather-workshop/HEAD?filepath=02_aifs_sensitivities.ipynb) [![Gradient](https://assets.paperspace.io/img/gradient-badge.svg)](https://console.paperspace.com/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Open%20In%20SageMaker%20Studio%20Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/jesperdramsch/xai-weather-workshop/blob/main/02_aifs_sensitivities.ipynb) [![Launch%20in%20Deepnote](https://deepnote.com/buttons/launch-in-deepnote-small.svg)](https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fjesperdramsch%2Fxai-weather-workshop%2Fblob%2Fmain%2F02_aifs_sensitivities.ipynb)
