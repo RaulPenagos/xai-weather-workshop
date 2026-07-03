@@ -65,7 +65,7 @@ _footer: ""
 _paginate: false
 -->
 
-![bg fit](img/where_when_what.png)
+![bg fit 55%](img/where_when_what.png)
 
 ---
 
@@ -275,17 +275,17 @@ An instructor demo
 
 <!-- _class: invert lead -->
 
-# You already know this <!--fit-->
+# Bridge back <!--fit-->
 
 ---
 
-## Bridge back
+## The connection
 
 &nbsp;
 
 -   Perturbation-based, model-agnostic: **Part 1**
 -   Gradient-based, model-aware: **Part 2**
--   Adjoint sensitivities: old friends from 4D-Var
+-   Adjoint sensitivities: the same idea behind 4D-Var data assimilation
 -   Not a new skill -- a new application
 
 ---
@@ -344,6 +344,6 @@ An instructor demo
 &nbsp;
 
 Jesper Dramsch (they/them) · ECMWF
-ai-in-public-health@rki.de
+jesper@dramsch.net
 
 `github.com/jesperdramsch/xai-weather-workshop`
