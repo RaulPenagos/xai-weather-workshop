@@ -65,7 +65,7 @@ _footer: ""
 _paginate: false
 -->
 
-![bg fit 55%](img/where_when_what.png)
+![bg 32%](img/where_when_what.png)
 
 ---
 
@@ -76,7 +76,6 @@ _paginate: false
 -   **Where**: tornadoes, eruptions, floods
 -   **When**: lead time
 -   **What**: feature importance
--   Part 1 -> what · Part 2 -> where + when
 
 ---
 
