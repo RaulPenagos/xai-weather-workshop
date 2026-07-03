@@ -121,7 +121,7 @@ From Penguins to Pitfalls
 
 ## The dataset
 
-![bg right:45%](img/penguins_scatter.png)
+![bg fit right:45%](img/penguins_scatter.png)
 
 -   Palmer Penguins
 -   3 species, 4 features
@@ -132,7 +132,7 @@ From Penguins to Pitfalls
 
 ## Tree
 
-![bg left:40%](img/tree_importance.png)
+![bg fit left:40%](img/tree_importance.png)
 
 -   Free -- read off the fitted model
 -   **Where it misleads**: cardinality + correlation bias
@@ -151,7 +151,7 @@ From Penguins to Pitfalls
 
 ## Permutation
 
-![bg right:38%](img/perm_importance.png)
+![bg fit right:38%](img/perm_importance.png)
 
 -   Shuffle one feature -> measure the damage
 -   Model-agnostic
@@ -190,7 +190,7 @@ From Penguins to Pitfalls
 
 ## SHAP
 
-![bg right:40%](img/shap_beeswarm.png)
+![bg fit right:40%](img/shap_beeswarm.png)
 
 -   Game-theoretic, per-prediction attribution
 -   **Where it misleads**: explains the model, not the world
@@ -227,7 +227,7 @@ An instructor demo
 
 ## How it works
 
-![bg right:48%](img/mechanism.png)
+![bg fit right:48%](img/mechanism.png)
 
 -   Forward: state → AIFS → forecast
 -   Backward: perturbation → autodiff → sensitivity map
@@ -248,7 +248,7 @@ An instructor demo
 
 ## Overview first
 
-![bg left:48%](../artifacts/images/01_pressure_level_summary.png)
+![bg fit left:48%](../artifacts/images/01_pressure_level_summary.png)
 
 -   Overview across all levels, both variables
 -   Guides where to zoom in next
@@ -257,7 +257,7 @@ An instructor demo
 
 ## Interactive map
 
-![bg right:48%](../artifacts/images/04_map_z500_sensitivity_regional.png)
+![bg fit right:48%](../artifacts/images/04_map_z500_sensitivity_regional.png)
 
 -   `2t`: self-check -- signal sits on the perturbation point
 -   `z_500`: paired +/- structure, upper-air dynamics
@@ -266,7 +266,7 @@ An instructor demo
 
 ## Vertical view
 
-![bg left:48%](../artifacts/images/05_cross_section_temperature.png)
+![bg fit left:48%](../artifacts/images/05_cross_section_temperature.png)
 
 -   Cross-section through the perturbation point
 -   Boundary layer vs. free troposphere
