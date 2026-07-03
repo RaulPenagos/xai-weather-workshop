@@ -59,6 +59,16 @@ Part 1: hands-on (Colab) · Part 2: instructor demo
 
 ---
 
+<!--
+_header: ""
+_footer: ""
+_paginate: false
+-->
+
+![bg fit](img/where_when_what.png)
+
+---
+
 ## Where / when / what
 
 &nbsp;
